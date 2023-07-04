@@ -7,6 +7,9 @@ $colors-text: #333;
 
 $colors-background: #fff;
 
+$colors-shadow: rgba(60, 60, 60, 0.29);
+$colors-disabled: var(--el-text-color-disabled);
+
 @forward 'element-plus/theme-chalk/src/common/var.scss' with (
   $colors: (
     'primary': (

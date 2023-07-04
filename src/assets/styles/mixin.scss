@@ -1,0 +1,24 @@
+$colors-blue: #0052d9;
+$colors-green: #67c23a;
+$colors-red: #e34d59;
+$colors-gray: #e7e7e7;
+
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: (
+    'primary': (
+      'base': $colors-blue
+    ),
+    'success': (
+      'base': $colors-green
+    ),
+    'danger': (
+      'base': $colors-red
+    ),
+    'error': (
+      'base': $colors-red
+    ),
+    'info': (
+      'base': $colors-gray
+    )
+  )
+);

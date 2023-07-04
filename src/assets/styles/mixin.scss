@@ -3,6 +3,10 @@ $colors-green: #67c23a;
 $colors-red: #e34d59;
 $colors-gray: #e7e7e7;
 
+$colors-text: #333;
+
+$colors-background: #fff;
+
 @forward 'element-plus/theme-chalk/src/common/var.scss' with (
   $colors: (
     'primary': (

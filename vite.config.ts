@@ -25,7 +25,9 @@ export default defineConfig({
   plugins: [
     vue(),
     AutoImport({
-      resolvers: [ElementPlusResolver({ importStyle: 'sass' })]
+      imports: ['vue', 'vue-router'],
+      resolvers: [ElementPlusResolver({ importStyle: 'sass' })],
+      dts: './auto-imports.d.ts'
     }),
     Components({
       resolvers: [

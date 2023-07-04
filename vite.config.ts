@@ -27,7 +27,10 @@ export default defineConfig({
     AutoImport({
       imports: ['vue', 'vue-router'],
       resolvers: [ElementPlusResolver({ importStyle: 'sass' })],
-      dts: './auto-imports.d.ts'
+      dts: './auto-imports.d.ts',
+      eslintrc: {
+        enabled: false // true用来生成自动引入的检查文件，生成后改成false
+      }
     }),
     Components({
       resolvers: [

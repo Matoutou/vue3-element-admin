@@ -19,6 +19,7 @@ module.exports = {
         //空行最多不能超过1行
         max: 1
       }
-    ]
+    ],
+    'vue/multi-word-component-names': 'off'
   }
 }

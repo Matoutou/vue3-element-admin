@@ -7,6 +7,8 @@ import vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -26,7 +28,13 @@ export default defineConfig({
     vue(),
     AutoImport({
       imports: ['vue', 'vue-router'],
-      resolvers: [ElementPlusResolver({ importStyle: 'sass' })],
+      resolvers: [
+        ElementPlusResolver({ importStyle: 'sass' }),
+        // Auto import icon components
+        IconsResolver({
+          prefix: 'Icon'
+        })
+      ],
       dts: './auto-imports.d.ts',
       eslintrc: {
         enabled: false // true用来生成自动引入的检查文件，生成后改成false
@@ -34,10 +42,17 @@ export default defineConfig({
     }),
     Components({
       resolvers: [
+        // Auto register icon components
+        IconsResolver({
+          enabledCollections: ['ep']
+        }),
         ElementPlusResolver({
           importStyle: 'sass'
         })
       ]
+    }),
+    Icons({
+      autoInstall: true
     })
   ]
 })

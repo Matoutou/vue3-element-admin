@@ -1,31 +1,31 @@
 <template>
-  <div class="side-bar" @mouseenter="isCollapse = false" @mouseleave="isCollapse = true">
+  <div class="layout-side" @mouseenter="isCollapse = false" @mouseleave="isCollapse = true">
     <div class="logo">
       <img src="@/assets/logo.svg" />
     </div>
     <el-scrollbar>
       <el-menu class="menu" :collapse="isCollapse">
-        <el-sub-menu index="1">
-          <template #title>
-            <el-icon><i-ep-house /></el-icon>
-            <span>Navigator One</span>
-          </template>
-          <el-menu-item index="1-1">item one</el-menu-item>
-          <el-menu-item index="1-2">item two</el-menu-item>
-          <el-menu-item index="1-3">item three</el-menu-item>
-          <el-sub-menu index="1-4">
-            <template #title><span>item four</span></template>
-            <el-menu-item index="1-4-1">item one</el-menu-item>
-          </el-sub-menu>
-        </el-sub-menu>
+        <el-menu-item index="1">
+          <el-icon><i-ep-house /></el-icon>
+          <template #title>Navigator Two</template>
+        </el-menu-item>
         <el-menu-item index="2">
           <el-icon><i-ep-menu /></el-icon>
           <template #title>Navigator Two</template>
         </el-menu-item>
-        <el-menu-item index="4">
-          <el-icon><i-ep-setting /></el-icon>
-          <template #title>Navigator Four</template>
-        </el-menu-item>
+        <el-sub-menu index="3">
+          <template #title>
+            <el-icon><i-ep-setting /></el-icon>
+            <span>Navigator Three</span>
+          </template>
+          <el-menu-item index="3-1">item one</el-menu-item>
+          <el-menu-item index="3-2">item two</el-menu-item>
+          <el-menu-item index="3-3">item three</el-menu-item>
+          <el-sub-menu index="3-4">
+            <template #title><span>item four</span></template>
+            <el-menu-item index="3-4-1">item one</el-menu-item>
+          </el-sub-menu>
+        </el-sub-menu>
       </el-menu>
     </el-scrollbar>
   </div>
@@ -36,7 +36,7 @@ let isCollapse = ref<boolean>(true)
 </script>
 
 <style lang="scss" scoped>
-.side-bar {
+.layout-side {
   position: absolute;
   top: 0;
   left: 0;
@@ -44,6 +44,7 @@ let isCollapse = ref<boolean>(true)
   overflow-y: hidden;
   box-shadow: 2px 0 5px $colors-shadow;
   background-color: #fff;
+  z-index: 1;
   .logo {
     width: 100%;
     height: 44px;

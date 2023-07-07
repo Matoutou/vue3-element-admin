@@ -27,5 +27,13 @@ $colors-disabled: var(--el-text-color-disabled);
     'info': (
       'base': $colors-gray
     )
+  ),
+  $font-size: (
+    'extra-large': 18px,
+    'large': 16px,
+    'medium': 14px,
+    'base': 12px,
+    'small': 10px,
+    'extra-small': 10px
   )
 );

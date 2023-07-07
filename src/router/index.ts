@@ -1,27 +1,67 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
+export const commonRoutes = [
+  {
+    path: '/',
+    name: 'login',
+    component: () => import('../views/LoginView.vue')
+  }
+]
+
+export const menuRoutes = [
+  {
+    path: '/home',
+    name: 'home',
+    redirect: '/home/workplace',
+    component: () => import('@/layouts/Layout.vue'),
+    meta: {
+      title: '首页'
+    },
+    children: [
+      {
+        path: '/home/workplace',
+        name: 'workplace',
+        component: () => import('@/views/WorkPlace.vue'),
+        meta: {
+          icon: 'House',
+          title: '工作台'
+        }
+      }
+    ]
+  },
+  {
+    path: '/list',
+    name: 'list',
+    redirect: '/list/table',
+    component: () => import('@/layouts/Layout.vue'),
+    meta: {
+      icon: 'Document',
+      title: '列表页'
+    },
+    children: [
+      {
+        path: '/list/table',
+        name: 'table',
+        component: () => import('../views/table/NormalTable.vue'),
+        meta: {
+          title: '查询表格'
+        }
+      },
+      {
+        path: '/list/card',
+        name: 'card',
+        component: () => import('../views/table/Card.vue'),
+        meta: {
+          title: '卡片'
+        }
+      }
+    ]
+  }
+]
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: '/',
-      name: 'login',
-      component: () => import('../views/LoginView.vue')
-    },
-    {
-      path: '/dashboard',
-      name: 'dashboard',
-      redirect: '/dashboard/home',
-      component: () => import('../layouts/Layout.vue'),
-      children: [
-        {
-          path: 'home',
-          name: 'home',
-          component: () => import('../views/HomeView.vue')
-        }
-      ]
-    }
-  ]
+  routes: commonRoutes.concat(menuRoutes)
 })
 
 export default router

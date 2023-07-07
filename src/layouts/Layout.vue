@@ -4,7 +4,7 @@
       <SideBar></SideBar>
       <el-container class="inner-container">
         <el-container>
-          <el-header>Header</el-header>
+          <el-header> <Header></Header></el-header>
           <el-main>
             <router-view></router-view>
           </el-main>
@@ -17,6 +17,7 @@
 
 <script setup lang="ts">
 import SideBar from './SideBar/SideBar.vue'
+import Header from './Header.vue'
 </script>
 
 <style lang="scss" scoped>
@@ -29,16 +30,17 @@ import SideBar from './SideBar/SideBar.vue'
   .inner-container {
     margin-left: 64px;
   }
-  :deep(.el-header) {
+  .el-header {
     height: 44px;
   }
-  :deep(.el-footer) {
+  .el-footer {
     height: 32px;
     background: $colors-gray;
     text-align: center;
   }
-  :deep(.el-main) {
+  .el-main {
     background: #f8f8f8;
+    padding: 0;
   }
 }
 </style>

@@ -53,6 +53,13 @@ const activeIndex = computed(() => {
   .el-menu {
     --el-menu-item-height: 40px;
     --el-menu-sub-item-height: calc(var(--el-menu-item-height) - 6px);
+    --el-menu-active-color: #fff;
+    :deep(.el-menu-item.is-active) {
+      background: var(--el-color-primary);
+    }
+    :deep(.el-sub-menu.is-active .el-sub-menu__title) {
+      color: var(--el-color-primary);
+    }
   }
 }
 </style>

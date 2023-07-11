@@ -5,6 +5,11 @@ export const commonRoutes = [
     path: '/',
     name: 'login',
     component: () => import('../views/LoginView.vue')
+  },
+  {
+    path: '/:error*',
+    name: '404',
+    component: () => import('@/views/error/404.vue')
   }
 ]
 
@@ -19,7 +24,7 @@ export const menuRoutes = [
     },
     children: [
       {
-        path: '/home/workplace',
+        path: 'workplace',
         name: 'workplace',
         component: () => import('@/views/WorkPlace.vue'),
         meta: {
@@ -40,7 +45,7 @@ export const menuRoutes = [
     },
     children: [
       {
-        path: '/list/table',
+        path: 'table',
         name: 'table',
         component: () => import('../views/table/NormalTable.vue'),
         meta: {
@@ -48,7 +53,7 @@ export const menuRoutes = [
         }
       },
       {
-        path: '/list/card',
+        path: 'card',
         name: 'card',
         component: () => import('../views/table/Card.vue'),
         meta: {

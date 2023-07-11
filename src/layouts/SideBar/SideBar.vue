@@ -7,7 +7,12 @@
     </div>
     <el-scrollbar>
       <el-menu class="menu" :router="true" :collapse="isCollapse" :default-active="activeIndex">
-        <SideBarItem v-for="item in menuList" :key="item.name" :item="item"></SideBarItem>
+        <SideBarItem
+          v-for="item in menuList"
+          :key="item.name"
+          :item="item"
+          :base-path="item.path"
+        ></SideBarItem>
       </el-menu>
     </el-scrollbar>
   </div>

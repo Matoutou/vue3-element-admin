@@ -28,7 +28,7 @@ export const menuRoutes = [
         name: 'workplace',
         component: () => import('@/views/WorkPlace.vue'),
         meta: {
-          icon: 'House',
+          elIcon: 'House',
           title: '工作台'
         }
       }
@@ -40,7 +40,7 @@ export const menuRoutes = [
     redirect: '/list/table',
     component: () => import('@/layouts/Layout.vue'),
     meta: {
-      icon: 'Document',
+      elIcon: 'Document',
       title: '列表页'
     },
     children: [

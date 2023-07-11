@@ -1,5 +1,5 @@
 <template>
-  <el-icon v-if="item.meta.icon"><Component :is="item.meta.icon"></Component> </el-icon>
+  <el-icon v-if="item.meta.elIcon"> <Component :is="item.meta.elIcon"></Component> </el-icon>
   <span>{{ item.meta.title }}</span>
 </template>
 

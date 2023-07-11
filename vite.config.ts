@@ -41,7 +41,7 @@ export default defineConfig({
           prefix: 'Icon'
         })
       ],
-      dts: './auto-imports.d.ts',
+      dts: '/src/types/auto-imports.d.ts',
       eslintrc: {
         enabled: false // true用来生成自动引入的检查文件，生成后改成false
       }
@@ -55,7 +55,8 @@ export default defineConfig({
         ElementPlusResolver({
           importStyle: 'sass'
         })
-      ]
+      ],
+      dts: '/src/types/components.d.ts'
     }),
     Icons({
       autoInstall: true

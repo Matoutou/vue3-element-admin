@@ -4,6 +4,9 @@
 declare module 'element-plus/dist/locale/zh-cn.mjs'
 declare module 'element-plus/dist/locale/en.mjs'
 
+// npm
+declare module 'path-browserify'
+
 // to fix import vue component error
 declare module '*.vue' {
   import { ComponentOptions } from 'vue'
